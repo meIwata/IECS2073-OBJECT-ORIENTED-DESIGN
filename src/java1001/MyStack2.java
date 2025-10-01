@@ -2,14 +2,50 @@ package java1001;
 
 public class MyStack2 {
 
-    final static int MAX_STACK_SIZE = 5;
-    public int[] stack = new int[MAX_STACK_SIZE];
-    public int top = -1;
+    final static int DEFAULT_STACK_SIZE = 5;
+    private int[] stack;
+    private int top;
+    private int size;
+
+    public MyStack2() {
+        stack = new int[DEFAULT_STACK_SIZE];
+        top = -1;
+        size = DEFAULT_STACK_SIZE;
+    }
+
+    public MyStack2(int _size) {
+        stack = new int[_size];
+        top = -1;
+        size = _size;
+    }
+
+    public int getSize() {
+        return size;
+    }
 
     public boolean isFull() {
-        boolean result = (top >= (MAX_STACK_SIZE - 1));
+        boolean result = (top >= (size - 1));
         if (result) {
-            System.out.println("The Stack is FULL!!!");
+            System.out.println("The Stack is FULL!!! Capacity of the stack is double!!!");
+//            int[] temp = new int[size * 2];
+//            for (int i = 0; i < size; i++) {
+//                temp[i] = this.stack[i];
+//            }
+//            this.stack = temp;
+//            size = size * 2;
+
+
+            MyStack2 tempStack = new MyStack2(this.getSize());
+            while (!this.isEmpty()) {
+                tempStack.push(this.top());
+                this.pop();
+            }
+            this.stack = new int[size * 2];
+            this.size = size * 2;
+            while (!tempStack.isEmpty()) {
+                this.push(tempStack.top());
+                tempStack.pop();
+            }
         }
         return result;
     }
@@ -23,9 +59,8 @@ public class MyStack2 {
     }
 
     public void push(int theElement) {
-        if (!isFull()) {
+        if(isFull())
             stack[++top] = theElement;
-        }
     }
 
     public void pop() {
@@ -61,6 +96,8 @@ public class MyStack2 {
         myStack.push(3);
         System.out.println(myStack.top());
         myStack.pop();
+
+//        myStack.stack[0] = 10;
         myStack.push(4);
         myStack.push(5);
         myStack.push(6);
