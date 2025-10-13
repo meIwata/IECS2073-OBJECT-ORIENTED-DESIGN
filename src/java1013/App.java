@@ -12,10 +12,10 @@ class Car {
 //    }
 
     // 有參建構子
-    Car(String make, String model, int year) {
-        this.make = make;
+    Car(String make, String model, int inputyear) { // 這裡的make, model, inputyear是區域變數
+        this.make = make; // this.make指的是上面的 String make，區域變數assign給成員變數
         this.model = model;
-        this.year = year;
+        year = inputyear; // 因為區域變數跟成員變數不一樣，所以可以不用this
     }
 
     // 方法
