@@ -7,9 +7,9 @@ class Car {
     int year;
 
     // 如果沒有寫建構子的話，Java預設會寫一個空建構子
-//    Car(){
-//
-//    }
+    Car(){
+
+    }
 
     // 有參建構子
     Car(String make, String model, int inputyear) { // 這裡的make, model, inputyear是區域變數
@@ -26,7 +26,8 @@ class Car {
 
 public class App {
     public static void main(String[] args) {
-        Car myCar = new Car("Honda", "Civic", 2020); // 使用有參建構子來建立物件
+        Car myCar2 = new Car(); //  如果已經自己設定好有參建構子，Java就不會再幫你做空參數建構子
+        Car myCar = new Car("null", "Civic", 2020); // 使用有參建構子來建立物件
         System.out.println(myCar.make); // null
         System.out.println(myCar.model); // null
         System.out.println(myCar.year); // 0
