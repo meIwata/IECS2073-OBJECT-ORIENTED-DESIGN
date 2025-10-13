@@ -31,6 +31,11 @@ class Car {
     void startEngine() {
         System.out.println("Engine started!");
     }
+    static void greetUser(String name) {
+        System.out.println("Hello, " + name.toUpperCase() + "!");
+//        System.out.println(count + make); // 靜態方法只能存取靜態變數
+    }
+
 
     // 靜態方法（Static Method）
     static void showCount() {
@@ -45,8 +50,10 @@ public class App {
 //        myCar.count = 10;
         Car.count = 10; // 靜態變數可以用類別名稱來存取
         myCar.startEngine(); // 呼叫實體方法
-
+//        myCar.greetUser("John"); // 呼叫實體方法
+        Car.greetUser("John"); // 呼叫靜態方法
         Car.showCount(); // 呼叫靜態方法
+
 
 //        Car myCar2 = new Car(); //  如果已經自己設定好有參建構子，Java就不會再幫你做空參數建構子
 //        Car myCar3 = new Car("BMW", "M3"); // 使用有參建構子來建立物件
