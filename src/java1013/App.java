@@ -6,8 +6,10 @@ class Car {
     String model;
     int year;
 
+    static int count;
+
     // 如果沒有寫建構子的話，Java預設會寫一個空建構子
-    Car(){
+    Car() {
 
     }
 
@@ -25,24 +27,36 @@ class Car {
         year = inputyear; // 因為區域變數跟成員變數不一樣，所以可以不用this
     }
 
-    // 方法
+    //  實體方法（Instance Method）
     void startEngine() {
         System.out.println("Engine started!");
+    }
+
+    // 靜態方法（Static Method）
+    static void showCount() {
+        System.out.println("Car count: " + count);
     }
 }
 
 public class App {
     public static void main(String[] args) {
         Car myCar = new Car("null", "Civic", 2020); // 使用有參建構子來建立物件
-        Car myCar2 = new Car(); //  如果已經自己設定好有參建構子，Java就不會再幫你做空參數建構子
-        Car myCar3 = new Car("BMW", "M3"); // 使用有參建構子來建立物件
+
+//        myCar.count = 10;
+        Car.count = 10; // 靜態變數可以用類別名稱來存取
+        myCar.startEngine(); // 呼叫實體方法
+
+        Car.showCount(); // 呼叫靜態方法
+
+//        Car myCar2 = new Car(); //  如果已經自己設定好有參建構子，Java就不會再幫你做空參數建構子
+//        Car myCar3 = new Car("BMW", "M3"); // 使用有參建構子來建立物件
 //        System.out.println(myCar.make); // null
 //        System.out.println(myCar.model); // null
 //        System.out.println(myCar.year); // 0
 
-        System.out.println(myCar3.make);
-        System.out.println(myCar3.model);
-        System.out.println(myCar3.year);
+//        System.out.println(myCar3.make);
+//        System.out.println(myCar3.model);
+//        System.out.println(myCar3.year);
 
 //        System.out.println("-------------------");
 //
