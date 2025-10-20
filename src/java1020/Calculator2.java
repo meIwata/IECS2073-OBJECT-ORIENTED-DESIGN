@@ -7,16 +7,17 @@ public class Calculator2 {
     }
 
     public static void main(String[] args) {
-        int a = 10;
-        int b = a;
-        b++;
+//        int a = 10;
+//        int b = a;
+//        b++;
+//        System.out.println("a: " + a);
+//        System.out.println("b: " + b);
 
-        System.out.println("a: " + a);
-        System.out.println("b: " + b);
-//        Calculator2 calc = new Calculator2();
-//        int number = 5;
-//        System.out.println("Before method call: " + number);
-//        calc.increment(number);
-//        System.out.println("After method call: " + number);
+
+        Calculator2 calc = new Calculator2();
+        int number = 5;
+        System.out.println("Before method call: " + number);
+        calc.increment(number);
+        System.out.println("After method call: " + number);
     }
 }
