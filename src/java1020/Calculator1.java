@@ -1,6 +1,6 @@
 package java1020;
 
-public class Calculator {
+public class Calculator1 {
     // Overloading 多載
     int add(int a, int b) {
         return a + b;
