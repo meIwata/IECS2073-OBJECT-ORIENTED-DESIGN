@@ -18,8 +18,19 @@ public class Student {
     public void setName(String name) {
         if (name.length() < 10) {
             this.name = name;
+        } else {
+            System.out.println("名字太長了，不可修改");
         }
+    }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age > 15 && age < 100) {
+            this.age = age;
+        }
     }
 }
 
