@@ -1,7 +1,7 @@
 package java1124;
 
 // Interface representing common functionalities for a Game Player
-interface GamePlayer {
+interface GamePlayer { // 一個GamePlayer的介面
     void chooseRole();
     void customizePlayer();
     void play();
@@ -31,6 +31,7 @@ class WarriorPlayer implements GamePlayer {
 // Concrete class representing a Mage player
 class MagePlayer implements GamePlayer {
     // Implementing methods from the interface
+    // 實作魔法師
     public void chooseRole() {
         System.out.println("Player chooses the Mage role.");
     }
@@ -93,8 +94,8 @@ public class GamePlayerApp {
     public static void main(String[] args) {
         // Creating an array of GamePlayers
         GamePlayer[] players = new GamePlayer[4];
-        players[0] = new WarriorPlayer();
-        players[1] = new MagePlayer();
+        players[0] = new WarriorPlayer(); // new 的是一般的類別，不可以去new介面
+        players[1] = new MagePlayer(); // 向上轉型，MagePlayer可以assign給GamePlayer
         players[2] = new ArcherPlayer();
         players[3] = new RoguePlayer();
 
