@@ -4,6 +4,9 @@ class Animal {
     void makeSound() {
         System.out.println("Some generic sound");
     }
+    void run(){
+        System.out.println("Running");
+    }
 }
 
 class Dog extends Animal {
@@ -15,7 +18,14 @@ class Dog extends Animal {
 
 public class MyAnimal {
     public static void main(String[] args) {
-        Animal myPet = new Dog(); // 多型：父類別的參考指向子類別的物件
+        Animal myPet = new Dog(); // 向上轉型，多型：父類別的參考指向子類別的物件
         myPet.makeSound(); // 呼叫的是子類別的makeSound()方法
+        myPet.run(); // 呼叫的是父類別的run()方法
+
+        System.out.println("------------");
+
+        Dog myDog = new Dog();
+        myDog.makeSound(); // 呼叫的是子類別的makeSound()方法
+        myDog.run(); // 呼叫的是父類別的run()方法
     }
 }
