@@ -27,34 +27,34 @@ public class ArrDemo {
 
         System.out.println((a == b) + "," + a.equals(b) + "," + (a.compareTo(b) == 0));
     }
+}
 
-    abstract class Publication {
+abstract class Publication {
+}
+
+class Book extends Publication {
+    public String name;
+
+    public Book() {
+        name = "book";
     }
 
-    class Book extends Publication {
-        public String name;
-
-        public Book() {
-            name = "book";
-        }
-
-        public Book(String n) {
-            name = n;
-        }
-
-        public String toString() {
-            return name;
-        }
-
-        public void set(Book in) {
-            name = in.name;
-            in.name = in.name + "_used";
-        }
+    public Book(String n) {
+        name = n;
     }
 
-    class GoodBook extends Book {
-        public String shout() {
-            return "I am good";
-        }
+    public String toString() {
+        return name;
+    }
+
+    public void set(Book in) {
+        name = in.name;
+        in.name = in.name + "_used";
+    }
+}
+
+class GoodBook extends Book {
+    public String shout() {
+        return "I am good";
     }
 }
