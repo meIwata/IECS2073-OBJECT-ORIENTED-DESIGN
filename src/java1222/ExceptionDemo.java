@@ -9,13 +9,23 @@ public class ExceptionDemo {
             int result = 3 /1;
             scores[3] = 100;
             System.out.println("end of try block");
-        } catch (ArithmeticException e) {
-            System.out.println(e.getMessage());
+        }
+
+        // 版本一: 一個一個捕獲，建議使用這種!!!
+        catch (ArithmeticException arithmeticException) {
+            System.out.println(arithmeticException.getMessage());
             System.out.println("end of ArithmeticException catch block");
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(e.getMessage()); // 捕獲並處理例外，印出錯誤訊息
+        } catch (ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException) {
+            System.out.println(arrayIndexOutOfBoundsException.getMessage()); // 捕獲並處理例外，印出錯誤訊息
             System.out.println("end of ArithmeticException catch block");
-        }finally {
+        }
+
+        // 版本二: 用父類直接捕獲
+//        catch (RuntimeException runtimeException) {
+//            System.out.println(runtimeException.getMessage());
+//            System.out.println("end of RuntimeException catch block");
+//        }
+        finally {
             System.out.println("end of finally block");
         }
 
