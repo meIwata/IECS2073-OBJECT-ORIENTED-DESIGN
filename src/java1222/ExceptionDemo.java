@@ -3,13 +3,19 @@ package java1222;
 public class ExceptionDemo {
     public static void main(String[] args) {
 
+        int scores[] = {85, 90, 78};
+
         try {
-            int result = 3 / 0;
+            int result = 3 /1;
+            scores[3] = 100;
             System.out.println("end of try block");
         } catch (ArithmeticException e) {
             System.out.println(e.getMessage());
-            System.out.println("end of catch block");
-        } finally {
+            System.out.println("end of ArithmeticException catch block");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.getMessage()); // 捕獲並處理例外，印出錯誤訊息
+            System.out.println("end of ArithmeticException catch block");
+        }finally {
             System.out.println("end of finally block");
         }
 
