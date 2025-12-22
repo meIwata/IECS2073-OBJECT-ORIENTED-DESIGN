@@ -6,7 +6,7 @@ public class ExceptionDemo {
         System.out.println(scores.length);
 
         try {
-            scores[3] = 100; // ArrayIndexOutOfBoundsException，runtime exception
+            scores[2] = 100; // ArrayIndexOutOfBoundsException，runtime exception
             System.out.println("end of try block");
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e.getMessage()); // 捕獲並處理例外，印出錯誤訊息
