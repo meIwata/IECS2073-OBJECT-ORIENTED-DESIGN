@@ -11,6 +11,9 @@ public class FileDemo {
         for (File child : childFiles) {
             System.out.println("Child: " + child.getName());
         }
+
+        File f2 = new File("OOP0922.iml");
+        System.out.println("If file exist? " + f2.exists());
     }
 
 }
