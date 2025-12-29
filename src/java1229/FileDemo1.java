@@ -2,7 +2,7 @@ package java1229;
 
 import java.io.File;
 
-public class FileDemo {
+public class FileDemo1 {
     public static void main(String[] args) {
         File f = new File("\\Users\\Lulu Liao\\Documents\\FCU\\OOP0922");
         System.out.println("Is dir: " + f.isDirectory());
